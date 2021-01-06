@@ -1,0 +1,35 @@
+h1 {
+  font-size: 18px;
+  font-weight: 900;
+  color: #303030;
+  line-height: 30px;
+}
+
+table {
+  border: 1px solid #444444;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #444444;
+  padding: 4px;
+}
+
+th {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3333b0;
+}
+
+a,
+a:visited {
+  color: #3333b0;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+img {
+  width: 100px;
+}
