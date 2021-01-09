@@ -1,0 +1,88 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #c0c0c0;
+  padding: 30px;
+}
+
+header h2 {
+  margin: 4px 0;
+}
+
+header .header-desc {
+  text-align: right;
+}
+
+header .time-desc {
+  font-size: 12px;
+  color: #909090;
+  padding: 2px 6px;
+}
+
+header .white-btn {
+  background: white;
+  margin: 0 2px;
+  padding: 2px 6px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: 12px;
+  color: #909090;
+}
+
+article .image-box {
+  text-align: center;
+  background: #f0f0f0;
+  padding: 20px 20px 8px 20px;
+}
+
+.image-box img {
+  width: 100%;
+}
+
+.image-box span {
+  width: 100%;
+  color: #909090;
+  font-size: 12px;
+}
+
+article .p-group {
+  margin: 30px 0;
+  border-top: 1px solid #000;
+}
+
+.p-group p {
+  font-size: 16px;
+  color: #606060;
+  text-indent: 16px;
+}
+
+footer {
+  padding: 6px 20px;
+}
+
+footer .link-group {
+  margin-bottom: 40px;
+}
+
+.link-group h4 {
+  margin: 2px 0;
+}
+
+.link-group ul {
+  list-style: square;
+}
+
+.link-group li {
+  margin: 4px;
+}
+
+.link-group li a,
+.link-group li a:visited {
+  color: #606060;
+  font-weight: 800;
+}
+
+.link-group li a:hover {
+  color: #f00;
+}
