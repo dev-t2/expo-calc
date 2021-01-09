@@ -61,7 +61,7 @@ footer {
   padding: 6px 20px;
 }
 
-footer .link-group {
+footer .link-group:first-child {
   margin-bottom: 40px;
 }
 
