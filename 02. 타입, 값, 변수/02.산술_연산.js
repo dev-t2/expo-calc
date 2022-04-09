@@ -42,8 +42,8 @@ console.log();
 const zero = 0;
 const nZero = -0;
 
-console.log(zero === nZero);
-console.log(1 / zero === 1 / nZero);
+console.log(zero === nZero); // 양의 0은 음의 0과 차이가 없음
+console.log(1 / zero === 1 / nZero); // 분모로 사용될 때는 예외
 
 console.log();
 
