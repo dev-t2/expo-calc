@@ -3,7 +3,9 @@ console.log('JavaScript');
 console.log('3.14');
 console.log('"JavaScript"');
 console.log("JavaScript's");
+console.log("JavaScript's");
 console.log(`"She said 'hi'"`);
+console.log('"She said \'hi\'"');
 
 console.log();
 
