@@ -1,6 +1,4 @@
-const timestamp = Date.now();
-
-console.log(timestamp); // 현재 시간을 타임스탬프(숫자)로 표현
+console.log(Date.now()); // 현재 시간을 타임스탬프(숫자)로 표현
 
 console.log();
 
