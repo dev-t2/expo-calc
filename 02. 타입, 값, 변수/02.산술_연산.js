@@ -1,4 +1,6 @@
 // 자바스크립트는 Math 객체의 프로퍼티로 정의된 함수와 상수를 통해 더 복잡한 수학 계산을 지원
+console.log(Math.pow(2, 53)); // 2의 53승
+console.log(Math.pow(4, 1 / 2)); // 4의 제곱근
 console.log(Math.ceil(0.5)); // 올림
 console.log(Math.round(0.5)); // 반올림
 console.log(Math.floor(0.5)); // 내림
