@@ -3,9 +3,7 @@
     "name": "pedometer-poc",
     "slug": "pedometer-poc",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"]
   },
   "name": "pedometer-poc"
 }
