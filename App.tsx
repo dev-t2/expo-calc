@@ -1,6 +1,13 @@
 import React, { memo, useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { Pedometer } from 'expo-sensors';
+import styled from '@emotion/native';
+
+const Container = styled.View({
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+});
 
 const App = () => {
   const [pastStepCount, setPastStepCount] = useState(0);
@@ -35,10 +42,10 @@ const App = () => {
   }, []);
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Container>
       <Text>Past Step Count: {pastStepCount}</Text>
       <Text>Current Step Count: {currentStepCount}</Text>
-    </View>
+    </Container>
   );
 };
 
