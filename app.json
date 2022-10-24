@@ -1,9 +1,10 @@
 {
+  "name": "pedometer-poc",
   "expo": {
+    "owner": "smil",
     "name": "pedometer-poc",
     "slug": "pedometer-poc",
     "version": "1.0.0",
     "assetBundlePatterns": ["**/*"]
-  },
-  "name": "pedometer-poc"
+  }
 }

@@ -1,21 +1,43 @@
-import React, { memo } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import React, { memo, useEffect, useState } from 'react';
+import { Text, View } from 'react-native';
+import { Pedometer } from 'expo-sensors';
 
 const App = () => {
+  const [pastStepCount, setPastStepCount] = useState(0);
+  const [currentStepCount, setCurrentStepCount] = useState(0);
+
+  useEffect(() => {
+    (async () => {
+      const { granted } = await Pedometer.requestPermissionsAsync();
+
+      if (granted) {
+        const subscription = Pedometer.watchStepCount(({ steps }) => {
+          setCurrentStepCount(steps);
+        });
+
+        const end = new Date();
+
+        const year = end.getFullYear();
+        const month = end.getMonth();
+        const date = end.getDate();
+
+        const start = new Date(year, month, date);
+
+        const { steps } = await Pedometer.getStepCountAsync(start, end);
+
+        setPastStepCount(steps);
+
+        return () => {
+          subscription.remove();
+        };
+      }
+    })();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Past Step Count: {pastStepCount}</Text>
+      <Text>Current Step Count: {currentStepCount}</Text>
     </View>
   );
 };
