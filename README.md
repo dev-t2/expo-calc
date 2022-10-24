@@ -8,3 +8,4 @@
 - [Emotion](https://emotion.sh/docs/introduction)
   - [@emotion/native](https://emotion.sh/docs/@emotion/native)
 - [Expo](https://expo.dev)
+  - [Pedometer](https://docs.expo.dev/versions/latest/sdk/pedometer)
