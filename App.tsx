@@ -19,7 +19,7 @@ const App = () => {
           type="operator"
           title="+"
           onPress={() => {
-            setResult((prev) => prev + 1);
+            setResult((prevState) => prevState + 1);
           }}
         />
 
@@ -27,7 +27,7 @@ const App = () => {
           type="operator"
           title="-"
           onPress={() => {
-            setResult((prev) => prev - 1);
+            setResult((prevState) => prevState - 1);
           }}
         />
       </Container>
