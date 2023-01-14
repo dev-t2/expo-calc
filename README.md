@@ -1,5 +1,7 @@
 # References
 
+- [React](https://reactjs.org)
+  - [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html)
 - [React Native](https://reactnative.dev)
 - [Expo](https://expo.dev)
   - [Using TypeScript](https://docs.expo.dev/guides/typescript)
