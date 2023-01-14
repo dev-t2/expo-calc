@@ -1,9 +1,10 @@
 import { memo } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from '@emotion/react';
 
 import { theme } from './src/theme';
+import { Button } from './src/components';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,7 +21,8 @@ const App = () => {
       <View style={styles.container}>
         <StatusBar style="auto" />
 
-        <Text>Open up App.tsx to start working on your app!</Text>
+        <Button width={100} height={100} title="1" onPress={() => console.log(1)} />
+        <Button width={200} height={100} title="2" onPress={() => console.log(2)} />
       </View>
     </ThemeProvider>
   );

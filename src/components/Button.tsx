@@ -1,17 +1,18 @@
-import { FC, memo } from 'react';
+import { FC, memo, useCallback, useState } from 'react';
 import styled from '@emotion/native';
 
 interface IStyledPressable {
   width: number;
   height: number;
+  isPress: boolean;
 }
 
-const StyledPressable = styled.Pressable<IStyledPressable>(({ theme, width, height }) => ({
+const StyledPressable = styled.Pressable<IStyledPressable>(({ theme, width, height, isPress }) => ({
   width,
   height,
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: theme.colors.zinc[500],
+  backgroundColor: isPress ? theme.colors.zinc[700] : theme.colors.zinc[500],
 }));
 
 const StyledText = styled.Text(({ theme }) => ({
@@ -27,8 +28,26 @@ interface IButton {
 }
 
 const Button: FC<IButton> = ({ width, height, title, onPress }) => {
+  const [isPress, setIsPress] = useState(false);
+
+  const onPressIn = useCallback(() => {
+    setIsPress(true);
+  }, []);
+
+  const onPressOut = useCallback(() => {
+    setIsPress(false);
+
+    onPress();
+  }, []);
+
   return (
-    <StyledPressable width={width} height={height} onPressOut={onPress}>
+    <StyledPressable
+      width={width}
+      height={height}
+      isPress={isPress}
+      onPressIn={onPressIn}
+      onPressOut={onPressOut}
+    >
       <StyledText>{title}</StyledText>
     </StyledPressable>
   );
