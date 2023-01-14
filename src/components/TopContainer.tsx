@@ -8,12 +8,12 @@ const Container = styled.View(({ theme }) => ({
   backgroundColor: theme.colors.black,
 }));
 
-interface IResultContainer {
+interface ITopContainer {
   children: ReactNode;
 }
 
-const ResultContainer: FC<IResultContainer> = ({ children }) => {
+const TopContainer: FC<ITopContainer> = ({ children }) => {
   return <Container>{children}</Container>;
 };
 
-export default memo(ResultContainer);
+export default memo(TopContainer);

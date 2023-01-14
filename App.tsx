@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from '@emotion/react';
 
 import { theme } from './src/theme';
-import { ButtonContainer, Container, Result, ResultContainer } from './src/components';
+import { BottomContainer, Container, Result, TopContainer } from './src/components';
 
 const App = () => {
   return (
@@ -11,11 +11,18 @@ const App = () => {
       <Container>
         <StatusBar style="light" />
 
-        <ResultContainer>
+        <TopContainer>
           <Result value={0} />
-        </ResultContainer>
+        </TopContainer>
 
-        <ButtonContainer></ButtonContainer>
+        <BottomContainer>
+          <Container flex={3}>
+            <Container flex={3}></Container>
+            <Container></Container>
+          </Container>
+
+          <Container></Container>
+        </BottomContainer>
       </Container>
     </ThemeProvider>
   );

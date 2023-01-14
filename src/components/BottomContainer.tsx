@@ -3,14 +3,15 @@ import styled from '@emotion/native';
 
 const Container = styled.View({
   flex: 1,
+  flexDirection: 'row',
 });
 
-interface IButtonContainer {
+interface IBottomContainer {
   children: ReactNode;
 }
 
-const ButtonContainer: FC<IButtonContainer> = ({ children }) => {
+const BottomContainer: FC<IBottomContainer> = ({ children }) => {
   return <Container>{children}</Container>;
 };
 
-export default memo(ButtonContainer);
+export default memo(BottomContainer);
