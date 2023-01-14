@@ -9,7 +9,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <StatusBar style="auto" />
+        <StatusBar style="light" />
 
         <ResultContainer>
           <Result value={0} />
