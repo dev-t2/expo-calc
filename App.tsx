@@ -1,31 +1,36 @@
-import { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { memo, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from '@emotion/react';
 
 import { theme } from './src/theme';
-import { Button } from './src/components';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { Button, Container, Text } from './src/components';
 
 const App = () => {
+  const [result, setResult] = useState(0);
+
   return (
     <ThemeProvider theme={theme}>
-      <View style={styles.container}>
+      <Container>
         <StatusBar style="auto" />
 
-        <Button title="1" onPress={() => console.log(1)} />
-        <Button width={200} title="2" onPress={() => console.log(2)} />
-        <Button type="operator" height={200} title="+" onPress={() => console.log('+')} />
-        <Button type="operator" title="-" onPress={() => console.log('-')} />
-      </View>
+        <Text text={result} />
+
+        <Button
+          type="operator"
+          title="+"
+          onPress={() => {
+            setResult((prev) => prev + 1);
+          }}
+        />
+
+        <Button
+          type="operator"
+          title="-"
+          onPress={() => {
+            setResult((prev) => prev - 1);
+          }}
+        />
+      </Container>
     </ThemeProvider>
   );
 };
