@@ -1,35 +1,21 @@
-import { memo, useState } from 'react';
+import { memo } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { ThemeProvider } from '@emotion/react';
 
 import { theme } from './src/theme';
-import { Button, Container, Text } from './src/components';
+import { ButtonContainer, Container, Result, ResultContainer } from './src/components';
 
 const App = () => {
-  const [result, setResult] = useState(0);
-
   return (
     <ThemeProvider theme={theme}>
       <Container>
         <StatusBar style="auto" />
 
-        <Text text={result} />
+        <ResultContainer>
+          <Result value={0} />
+        </ResultContainer>
 
-        <Button
-          type="operator"
-          title="+"
-          onPress={() => {
-            setResult((prevState) => prevState + 1);
-          }}
-        />
-
-        <Button
-          type="operator"
-          title="-"
-          onPress={() => {
-            setResult((prevState) => prevState - 1);
-          }}
-        />
+        <ButtonContainer></ButtonContainer>
       </Container>
     </ThemeProvider>
   );

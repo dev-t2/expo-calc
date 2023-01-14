@@ -42,15 +42,15 @@ const Button: FC<IButton> = ({ type = 'number', width = 100, height = 100, title
     setBackgroundColor(() => {
       return type === 'number' ? theme.colors.zinc[700] : theme.colors.amber[700];
     });
-  }, []);
+  }, [type, theme.colors.zinc, theme.colors.amber]);
 
   const onPressOut = useCallback(() => {
-    onPress();
-
     setBackgroundColor(() => {
       return type === 'number' ? theme.colors.zinc[500] : theme.colors.amber[500];
     });
-  }, []);
+
+    onPress();
+  }, [type, theme.colors.zinc, theme.colors.amber, onPress]);
 
   return (
     <StyledPressable

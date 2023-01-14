@@ -1,12 +1,10 @@
 import { FC, memo, ReactNode } from 'react';
 import styled from '@emotion/native';
 
-const StyledView = styled.View({
+const StyledView = styled.View(({ theme }) => ({
   flex: 1,
-  backgroundColor: '#fff',
-  alignItems: 'center',
-  justifyContent: 'center',
-});
+  backgroundColor: theme.colors.white,
+}));
 
 interface IContainer {
   children: ReactNode;

@@ -1,5 +1,6 @@
 export const theme = {
   colors: {
+    black: '#000000',
     white: '#ffffff',
     zinc: {
       500: '#71717a',
