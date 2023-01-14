@@ -7,7 +7,7 @@
   - [Options](https://prettier.io/docs/en/options.html)
 - [ESLint](https://eslint.org)
   - [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
-  - [Rules](https://eslint.org/docs/latest/rules)
+- [typescript-eslint](https://typescript-eslint.io)
 - [Emotion](https://emotion.sh/docs/introduction)
   - [@emotion/native](https://emotion.sh/docs/@emotion/native)
   - [TypeScript](https://emotion.sh/docs/typescript)
