@@ -11,3 +11,5 @@
 - [Emotion](https://emotion.sh/docs/introduction)
   - [@emotion/native](https://emotion.sh/docs/@emotion/native)
   - [TypeScript](https://emotion.sh/docs/typescript)
+- [Tailwind CSS](https://tailwindcss.com)
+  - [Customizing Colors](https://tailwindcss.com/docs/customizing-colors)
