@@ -2,16 +2,16 @@ import { FC, memo, ReactNode } from 'react';
 import styled from '@emotion/native';
 
 const Container = styled.View({
-  flex: 1,
   flexDirection: 'row',
+  padding: 1,
 });
 
-interface IBottomContainer {
+interface IPad {
   children: ReactNode;
 }
 
-const BottomContainer: FC<IBottomContainer> = ({ children }) => {
+const Pad: FC<IPad> = ({ children }) => {
   return <Container>{children}</Container>;
 };
 
-export default memo(BottomContainer);
+export default memo(Pad);

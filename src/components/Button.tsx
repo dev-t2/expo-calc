@@ -2,16 +2,24 @@ import { FC, memo, useCallback, useState } from 'react';
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/native';
 
-interface IStyledPressable {
+interface IStyledView {
   width: number;
   height: number;
+}
+
+const Container = styled.View<IStyledView>(({ width, height }) => ({
+  width,
+  height,
+  padding: 1,
+}));
+
+interface IStyledPressable {
   backgroundColor: string;
 }
 
-const StyledPressable = styled.Pressable<IStyledPressable>(({ width, height, backgroundColor }) => {
+const StyledPressable = styled.Pressable<IStyledPressable>(({ backgroundColor }) => {
   return {
-    width,
-    height,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor,
@@ -25,13 +33,13 @@ const StyledText = styled.Text(({ theme }) => ({
 
 interface IButton {
   type?: 'number' | 'operator';
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
   title: string;
   onPress: () => void;
 }
 
-const Button: FC<IButton> = ({ type = 'number', width = 100, height = 100, title, onPress }) => {
+const Button: FC<IButton> = ({ type = 'number', width, height, title, onPress }) => {
   const theme = useTheme();
 
   const [backgroundColor, setBackgroundColor] = useState(() => {
@@ -53,15 +61,15 @@ const Button: FC<IButton> = ({ type = 'number', width = 100, height = 100, title
   }, [type, theme.colors.zinc, theme.colors.amber, onPress]);
 
   return (
-    <StyledPressable
-      width={width}
-      height={height}
-      backgroundColor={backgroundColor}
-      onPressIn={onPressIn}
-      onPressOut={onPressOut}
-    >
-      <StyledText>{title}</StyledText>
-    </StyledPressable>
+    <Container width={width} height={height}>
+      <StyledPressable
+        backgroundColor={backgroundColor}
+        onPressIn={onPressIn}
+        onPressOut={onPressOut}
+      >
+        <StyledText>{title}</StyledText>
+      </StyledPressable>
+    </Container>
   );
 };
 
