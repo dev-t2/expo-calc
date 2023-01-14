@@ -1,19 +1,22 @@
 import { FC, memo, useCallback, useState } from 'react';
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/native';
 
 interface IStyledPressable {
   width: number;
   height: number;
-  isPress: boolean;
+  backgroundColor: string;
 }
 
-const StyledPressable = styled.Pressable<IStyledPressable>(({ theme, width, height, isPress }) => ({
-  width,
-  height,
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: isPress ? theme.colors.zinc[700] : theme.colors.zinc[500],
-}));
+const StyledPressable = styled.Pressable<IStyledPressable>(({ width, height, backgroundColor }) => {
+  return {
+    width,
+    height,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor,
+  };
+});
 
 const StyledText = styled.Text(({ theme }) => ({
   fontSize: 48,
@@ -21,30 +24,39 @@ const StyledText = styled.Text(({ theme }) => ({
 }));
 
 interface IButton {
-  width: number;
-  height: number;
+  type?: 'number' | 'operator';
+  width?: number;
+  height?: number;
   title: string;
   onPress: () => void;
 }
 
-const Button: FC<IButton> = ({ width, height, title, onPress }) => {
-  const [isPress, setIsPress] = useState(false);
+const Button: FC<IButton> = ({ type = 'number', width = 100, height = 100, title, onPress }) => {
+  const theme = useTheme();
+
+  const [backgroundColor, setBackgroundColor] = useState(() => {
+    return type === 'number' ? theme.colors.zinc[500] : theme.colors.amber[500];
+  });
 
   const onPressIn = useCallback(() => {
-    setIsPress(true);
+    setBackgroundColor(() => {
+      return type === 'number' ? theme.colors.zinc[700] : theme.colors.amber[700];
+    });
   }, []);
 
   const onPressOut = useCallback(() => {
-    setIsPress(false);
-
     onPress();
+
+    setBackgroundColor(() => {
+      return type === 'number' ? theme.colors.zinc[500] : theme.colors.amber[500];
+    });
   }, []);
 
   return (
     <StyledPressable
       width={width}
       height={height}
-      isPress={isPress}
+      backgroundColor={backgroundColor}
       onPressIn={onPressIn}
       onPressOut={onPressOut}
     >

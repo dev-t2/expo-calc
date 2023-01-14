@@ -21,8 +21,10 @@ const App = () => {
       <View style={styles.container}>
         <StatusBar style="auto" />
 
-        <Button width={100} height={100} title="1" onPress={() => console.log(1)} />
-        <Button width={200} height={100} title="2" onPress={() => console.log(2)} />
+        <Button title="1" onPress={() => console.log(1)} />
+        <Button width={200} title="2" onPress={() => console.log(2)} />
+        <Button type="operator" height={200} title="+" onPress={() => console.log('+')} />
+        <Button type="operator" title="-" onPress={() => console.log('-')} />
       </View>
     </ThemeProvider>
   );
