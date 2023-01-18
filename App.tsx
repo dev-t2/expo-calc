@@ -32,7 +32,7 @@ const App = () => {
         <StatusBar style="light" />
 
         <TopContainer>
-          <Result value={result} />
+          <Result value={`${result}`} />
         </TopContainer>
 
         <Pad>

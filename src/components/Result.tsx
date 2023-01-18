@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, memo, useMemo } from 'react';
 import styled from '@emotion/native';
 
 const StyledText = styled.Text(({ theme }) => ({
@@ -10,11 +10,13 @@ const StyledText = styled.Text(({ theme }) => ({
 }));
 
 interface IResult {
-  value: number;
+  value: string;
 }
 
 const Result: FC<IResult> = ({ value }) => {
-  return <StyledText>{value}</StyledText>;
+  const result = useMemo(() => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','), [value]);
+
+  return <StyledText>{result}</StyledText>;
 };
 
 export default memo(Result);
